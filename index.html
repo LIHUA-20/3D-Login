@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <div class="content">
+            <div class="content-left">
+                <div class="left-wrapper">
+                    <div class="tips">
+                        <h1>Login</h1>
+                        <span>if You Are Already A Member, Easily Log In</span>
+                    </div>
+                    <div class="form-wrapper">
+                        <input type="text" class="ipt" placeholder="Email">
+                        <input type="password" class="ipt" placeholder="Password">
+                        <button class="btn">Login</button>
+                    </div>
+                    <div class="other-login">
+                        <img src="./asset/img//WeChat.png" alt="">
+                        <span>Login with WeChat</span>
+                    </div>
+                    <div class="forgot-pwd">
+                        <span>Forgot my password</span>
+                    </div>
+                    <div class="line"></div>
+                    <div class="resgister">
+                        <span>If You Don't Have An Account, Create</span>
+                        <button class="reg-btn">Resgister</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-right">
+                <div class="right-box">
+                    <canvas id="canvas3d"></canvas>
+                    <img class="loadding" src="./asset/img/loading.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module">
+    import {Application} from './asset/spline/runtime.js'
+    const canvas = document.getElementById('canvas3d')
+    const loadding = document.querySelector('.loadding')
+    const app = new Application(canvas)
+    app.load('./asset/spline/scene.splinecode')
+
+    setTimeout(function() {
+        loadding.style.opacity = '0'
+        canvas.style.opacity = '1'
+    }, 3000)
+</script>
+</html>
